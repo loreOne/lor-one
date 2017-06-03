@@ -10,7 +10,7 @@ module.exports = function (server) {
   // User body-parser into API's router for JSON format into XHR requests
   router.use(bodyParser.json());
 
-  // require('../socket/appIO')(server, database, passportConf);
+  require('../socket/appIO')(server);
 
 
   router.get('/', function(req, res) {
