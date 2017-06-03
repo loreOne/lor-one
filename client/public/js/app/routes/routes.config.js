@@ -19,7 +19,8 @@
     $routeProvider
     .when('/', {
       templateUrl: '/views/home.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      controllerAs: 'hc'
     })
     .when('/blank', {
       templateUrl: '/views/blank.html',

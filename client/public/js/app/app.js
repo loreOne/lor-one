@@ -3,6 +3,7 @@
   angular.module('app', [
     'ngRoute',
     'ui.router',
+    'googlechart',
     'app.routes',
     'app.sockets',
     'app.home',
