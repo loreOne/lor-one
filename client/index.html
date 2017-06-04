@@ -15,6 +15,9 @@
   <base href="/">
   <link rel="stylesheet" href="/css/theme/AdminLTE.min.css">
   <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script> -->
+  <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng- controller="mainController">
   <div class="wrapper">
@@ -46,16 +49,22 @@
         <ul class="sidebar-menu">
           <li class="header">MENU PRINCIPAL</li>
           <li class="active">
-            <a href="/">
+            <a href="#!/">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
             </a>
           </li>
 
           <li>
-            <a href="/blank">
+            <a href="#!/blank">
               <i class="fa fa-th"></i>
               <span>Pagina en blanco</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!/maps">
+              <i class="fa fa-map"></i>
+              <span>Mapa</span>
             </a>
           </li>
 
@@ -76,8 +85,8 @@
   <script src="/js/socket.io.js" charset="utf-8"></script>
   <script src="/angular/angular.min.js" charset="utf-8"></script>
   <script src="/angular-route/angular-route.min.js" charset="utf-8"></script>
-  <script src="/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
   <script src="/angular-google-chart/ng-google-chart.min.js" charset="utf-8"></script>
+  <script src="/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
 
   <script src="/js/app/app.js" charset="utf-8"></script>
   <script src="/js/app/routes/routes.module.js" charset="utf-8"></script>
@@ -85,6 +94,7 @@
   <script src="/js/app/sockets/sockets.module.js" charset="utf-8"></script>
   <script src="/js/app/main.controller.js" charset="utf-8"></script>
   <script src="/js/app/home/home.controller.js" charset="utf-8"></script>
+  <script src="/js/app/map/map.module.js" charset="utf-8"></script>
   <script src="/js/app/blank/blank.module.js" charset="utf-8"></script>
   <!-- jQuery 2.2.3 -->
   <script src="/js/plugins/jQuery/jquery-2.2.3.min.js"></script>

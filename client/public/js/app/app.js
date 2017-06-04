@@ -7,6 +7,7 @@
     'app.routes',
     'app.sockets',
     'app.home',
-    'app.blank'
+    'app.blank',
+    'app.map'
   ]);
 }());
