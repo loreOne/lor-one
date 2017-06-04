@@ -1,0 +1,18 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Vehiculos
+    <small>Listado tiempo real</small>
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <ui-gmap-google-map center='mc.map.center' zoom='mc.map.zoom'>
+    <ui-gmap-marker ng-repeat="marker in mc.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" click="mc.onClick(marker)">
+    </ui-gmap-marker>
+  </ui-gmap-google-map>
+  {{mc.map}}
+
+</section>
+<!-- /.content -->

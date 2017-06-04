@@ -9,6 +9,7 @@
     'app.sockets',
     'app.home',
     'app.blank',
-    'app.map'
+    'app.map',
+    'app.vehicles'
   ]);
 }());
