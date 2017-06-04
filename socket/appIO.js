@@ -81,7 +81,7 @@ module.exports = function ( server ) {
         }
         else{
           for (var i = 0; i < result.length; i++) {
-            // console.log('results[i]', result[i])
+            console.log('results[i]', result[i])
           }
           if(result.length > 0){
             // console.log('resultado ', result[0]);

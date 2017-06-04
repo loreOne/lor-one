@@ -17,7 +17,14 @@
   <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script> -->
   <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
-
+  <style media="screen">
+  .angular-google-map-container { height: 400px; }
+  .marker-labels {
+      background: white;
+      border: red 1px solid;
+      padding: 4px;
+  }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng- controller="mainController">
   <div class="wrapper">
@@ -82,11 +89,16 @@
     <div ng-include="'/views/partials/footer.html'"></div>
   </div>
   <!-- ./wrapper -->
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src="//cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" charset="utf-8"></script>
   <script src="/js/socket.io.js" charset="utf-8"></script>
   <script src="/angular/angular.min.js" charset="utf-8"></script>
   <script src="/angular-route/angular-route.min.js" charset="utf-8"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+  <script src="/angular-google-maps/dist/angular-google-maps.js" charset="utf-8"></script>
   <script src="/angular-google-chart/ng-google-chart.min.js" charset="utf-8"></script>
   <script src="/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+  <script src="/angular-simple-logger/dist/angular-simple-logger.js" charset="utf-8"></script>
 
   <script src="/js/app/app.js" charset="utf-8"></script>
   <script src="/js/app/routes/routes.module.js" charset="utf-8"></script>

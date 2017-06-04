@@ -1,9 +1,10 @@
 (function() {
   'use strict';
   angular.module('app', [
+    'uiGmapgoogle-maps',
     'ngRoute',
-    'ui.router',
     'googlechart',
+
     'app.routes',
     'app.sockets',
     'app.home',

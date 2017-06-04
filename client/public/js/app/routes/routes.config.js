@@ -28,7 +28,8 @@
     })
     .when('/maps', {
       templateUrl: '/views/maps.html',
-      controller: 'mapController'
+      controller: 'mapController',
+      controllerAs: 'mc'
     });
 
     // configure html5 to get links working on jsfiddle
