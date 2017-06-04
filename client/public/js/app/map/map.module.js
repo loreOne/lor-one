@@ -79,5 +79,13 @@
     function closeClick (marker) {
       marker.window.options.visible = false;
     }
+/*
+    for(var i=1 ; i< 20 ; i++){
+      setTimeout(function () {
+        vm.markers[1].coords.latitude = vm.markers[1].coords.latitude+(i*0.00001);
+        vm.markers[1].coords.longitude = vm.markers[1].coords.longitude+(i*0.00001);
+      }, 5000);
+    }
+*/
   };
 }());

@@ -18,10 +18,10 @@
       options : {
         width: 400,
         height: 250,
-        redFrom: 35,
+        redFrom: 45,
         redTo: 60,
-        yellowFrom: 25,
-        yellowTo: 34,
+        yellowFrom: 35,
+        yellowTo: 44,
         minorTicks: 5,
         max:60
       },
@@ -35,10 +35,10 @@
       options : {
         width: 400,
         height: 250,
-        redFrom: 35,
-        redTo: 60,
-        yellowFrom: 25,
-        yellowTo: 34,
+        redFrom: 0,
+        redTo: 15,
+        yellowFrom: 16,
+        yellowTo: 30,
         minorTicks: 5,
         max:60
       },
@@ -52,12 +52,12 @@
       options : {
         width: 400,
         height: 250,
-        redFrom: 350,
-        redTo: 400,
-        yellowFrom: 25,
-        yellowTo: 34,
+        redFrom: 500,
+        redTo: 600,
+        yellowFrom: 400,
+        yellowTo: 500,
         minorTicks: 5,
-        max:460
+        max:600
       },
       data: [
         ['Label', 'Value'],
