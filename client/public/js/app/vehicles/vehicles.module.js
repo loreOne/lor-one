@@ -4,8 +4,8 @@
 
   angular.module('app.vehicles')
   .controller('vehiclesController', vehiclesController);
-  vehiclesController.$inject = [];
-  function vehiclesController() {
+  vehiclesController.$inject = ['socket'];
+  function vehiclesController(socket) {
     var vm = this;
 
     vm.closeClick = closeClick;
@@ -47,25 +47,11 @@
         }
       }
     }
-    vm.markers[1] =  {
-      "id":2,
-      coords:{
-        latitude:24.78274781559728,
-        longitude:-107.39551115036011
-      },
-      showWindow:true,
-      options:{
-        draggable:true,
-        icon:"/img/police-front.png",
-      },
-      show:true,
-      window:{
-        title: 'Mod 2',
-        options:{
-          visible: false
-        }
-      }
-    }
+    socket.on('coords:gps', function coords(pos) {
+      alert('llego pos');
+      vm.markers[0].coords.latitude = pos.lat;
+      vm.markers[0].coords.longitude = pos.lng;
+    });
     function onClick (marker) {
       marker.window.options.visible = !marker.window.options.visible;
     };
