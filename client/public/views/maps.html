@@ -9,7 +9,18 @@
 <!-- Main content -->
 <section class="content">
   <ui-gmap-google-map center='mc.map.center' zoom='mc.map.zoom'>
-    <ui-gmap-marker ng-repeat="marker in mc.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+    <ui-gmap-marker ng-repeat="marker in mc.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" click="mc.onClick(marker)">
+      <ui-gmap-window options="marker.window.options" closeClick="mc.closeClick(marker)">
+        <div id="content">
+          <div id="siteNotice">
+            <div>{{marker.window.title}}</div>
+          </div>
+          <h1 id="firstHeading" class="firstHeading">Mensaje</h1>
+          <div id="bodyContent">
+            <p>Te estamos observando nene</p>
+          </div>
+        </div>
+      </ui-gmap-window>
     </ui-gmap-marker>
   </ui-gmap-google-map>
   {{mc.map}}

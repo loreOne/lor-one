@@ -7,6 +7,17 @@
   mapController.$inject = [];
   function mapController() {
     var vm = this;
+
+    vm.closeClick = closeClick;
+    vm.onClick = onClick;
+    var contentString = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Mensaje</h1>'+
+    '<div id="bodyContent">'+
+    '<p>Te estamos observando nene</p>'+
+    '</div>'+
+    '</div>';
     vm.map = {
       center:{
         latitude:24.785631044207356,
@@ -30,7 +41,14 @@
         "labelAnchor":"22 0",
         "labelClass":"marker-labels"
       },
-      "show":true
+      "show":true,
+      window:{
+        title: 'Mod 1',
+        options:{
+          visible: false,
+          templateParameter:contentString
+        }
+      }
     }
     vm.markers[1] =  {
       "id":2,
@@ -46,8 +64,20 @@
         "labelAnchor":"22 0",
         "labelClass":"marker-labels"
       },
-      "show":true
+      "show":true,
+      window:{
+        title: 'Mod 2',
+        options:{
+          visible: false
+        }
+      }
     }
+    function onClick (marker) {
+      marker.window.options.visible = !marker.window.options.visible;
+    };
 
+    function closeClick (marker) {
+      marker.window.options.visible = false;
+    }
   };
 }());
