@@ -40,7 +40,7 @@
         yellowFrom: 16,
         yellowTo: 30,
         minorTicks: 5,
-        max:60
+        max:100
       },
       data: [
         ['Label', 'Value'],
@@ -98,9 +98,7 @@
         // console.log('luminosidad ', result);
         vm.luminosidadChart.data[1][1] = result;
       });
-    }, 5000);
-
-
+    }, 1000);
   }
 
 }());

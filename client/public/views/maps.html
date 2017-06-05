@@ -12,18 +12,31 @@
     <ui-gmap-marker ng-repeat="marker in mc.markers" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" click="mc.onClick(marker)">
       <ui-gmap-window options="marker.window.options" closeClick="mc.closeClick(marker)">
         <div id="content">
-          <div id="siteNotice">
+          <!-- <div id="siteNotice">
             <div>{{marker.window.title}}</div>
-          </div>
-          <h1 id="firstHeading" class="firstHeading">Mensaje</h1>
+          </div> -->
+          <h1 id="firstHeading" class="firstHeading">
+            {{marker.window.title}}
+          </h1>
           <div id="bodyContent">
-            <p>Te estamos observando nene</p>
+            <p>
+              <b> Temperatura: </b>
+              <span> {{mc.dataSensors.temperatura}}</span>
+            </p>
+            <p>
+              <b> Humedad: </b>
+              <span>{{mc.dataSensors.humedad}}</span>
+            </p>
+            <p>
+              <b> Luminosidad: </b>
+              <span> {{mc.dataSensors.luminosidad}}</span>
+            </p>
           </div>
         </div>
       </ui-gmap-window>
     </ui-gmap-marker>
   </ui-gmap-google-map>
-  {{mc.map}}
+  <!-- {{mc.map}} -->
 
 </section>
 <!-- /.content -->

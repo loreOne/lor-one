@@ -40,7 +40,7 @@
       },
       show:true,
       window:{
-        title: 'Mod 1',
+        title: 'Mod x',
         options:{
           visible: false,
           templateParameter:contentString
@@ -48,9 +48,11 @@
       }
     }
     socket.on('coords:gps', function coords(pos) {
-      alert('llego pos');
+      console.log('coords:gps', pos);
       vm.markers[0].coords.latitude = pos.lat;
       vm.markers[0].coords.longitude = pos.lng;
+      vm.map.center.latitude = pos.lat;
+      vm.map.center.longitude = pos.lng;
     });
     function onClick (marker) {
       marker.window.options.visible = !marker.window.options.visible;

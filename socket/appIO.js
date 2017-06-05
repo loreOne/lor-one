@@ -15,6 +15,14 @@ serialport.list(function (err, ports) {
 const math = require('mathjs');
 
 const mysql = require('mysql');
+// var connection = mysql.createConnection({
+//   host: '172.172.172.25',
+//   user: 'root',
+//   password: 'root',
+//   database: 'estacion',
+//   // port: 3306
+//   insecureAuth: true
+// });
 var connection = mysql.createConnection({
   host: '76.163.252.208',
   user: 'C352466_wpuser',
@@ -116,7 +124,7 @@ module.exports = function ( server ) {
 
     function _getData(target, cb) {
 
-      connection.query(`SELECT * FROM dato where variable = '${target}' order by fecha desc limit 1`, function (error, result, fields) {
+      connection.query(`SELECT * FROM dato where id='est1' and variable = '${target}' order by fecha desc limit 1`, function (error, result, fields) {
         if(error){
           throw error;
         }
@@ -176,6 +184,14 @@ module.exports = function ( server ) {
           latlng: pos
         }); //emit
       }
+      else {
+        var pos = {
+          lat: 24.810188,
+          lng: -107.435806
+        };
+        socket.emit('coords:gps', pos); //emit
+
+      }
 
       socket.emit('datos:sensors', {
         sensores: sen
@@ -201,9 +217,10 @@ module.exports = function ( server ) {
     }); //port on
 
 
-
-
-
+    socket.emit('coords:gps', {
+      lat: 24.810188,
+      lng: -107.435806
+    }); //emit
 
   });
 };

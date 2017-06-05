@@ -4,8 +4,8 @@
 
   angular.module('app.map')
   .controller('mapController', mapController);
-  mapController.$inject = [];
-  function mapController() {
+  mapController.$inject = ['socket'];
+  function mapController (socket) {
     var vm = this;
 
     vm.closeClick = closeClick;
@@ -20,28 +20,33 @@
     '</div>';
     vm.map = {
       center:{
-        latitude:24.785631044207356,
-        longitude:-107.39720630645752
+        latitude:24.810188,
+        longitude:-107.435806
       },
-      zoom:14
+      zoom:16
     };
-
+    vm.dataSensors={
+      temperatura:'-',
+      humedad:'-',
+      luminosidad:'-'
+    };
     vm.markers=[];
     vm.markers[0] =  {
-      "id":1,
+      id:1,
       coords:{
-        latitude:24.785631044207356,
-        longitude:-107.39720630645752
+        latitude:24.810188,
+        longitude:-107.435806
       },
-      "showWindow":true,
-      "options":{
+
+      showWindow:true,
+      options:{
         draggable:true,
-        "icon":"/img/pin.png",
+        icon:"/img/pin.png",
         "labelContent":"Mod 1",
         "labelAnchor":"22 0",
         "labelClass":"marker-labels"
       },
-      "show":true,
+      show:true,
       window:{
         title: 'Mod 1',
         options:{
@@ -50,28 +55,7 @@
         }
       }
     }
-    vm.markers[1] =  {
-      "id":2,
-      coords:{
-        "latitude":24.78274781559728,
-        "longitude":-107.39551115036011
-      },
-      "showWindow":true,
-      "options":{
-        draggable:true,
-        "icon":"/img/pin.png",
-        "labelContent":"Mod 2",
-        "labelAnchor":"22 0",
-        "labelClass":"marker-labels"
-      },
-      "show":true,
-      window:{
-        title: 'Mod 2',
-        options:{
-          visible: false
-        }
-      }
-    }
+
     function onClick (marker) {
       marker.window.options.visible = !marker.window.options.visible;
     };
@@ -79,6 +63,17 @@
     function closeClick (marker) {
       marker.window.options.visible = false;
     }
+    setTimeout(function () {
+      socket.on('temperatura', function (result) {
+        vm.dataSensors.temperatura = result+' C';
+      });
+      socket.on('humedad', function (result) {
+        vm.dataSensors.humedad = result+' %';
+      });
+      socket.on('luminosidad', function (result) {
+        vm.dataSensors.luminosidad = result+' Cd';
+      });
+    }, 500);
 /*
     for(var i=1 ; i< 20 ; i++){
       setTimeout(function () {
